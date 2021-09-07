@@ -79,28 +79,38 @@ class _InputPageState extends State<InputPage> {
                       Text(
                         height.toString(),
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 60.0,
-                          fontWeight: FontWeight.w900,
-                        ), // TextStyle
+                        style: kNumberTextStyle,
                       ), // Text
                       Text(
                         'cm',
                       ), // Text
                     ],
                   ), // Row
-                  Slider(
-                    value: height.toDouble(),
-                    min: 120.0,
-                    max: 220.0,
-                    activeColor: Color(0xFFEB1555),
-                    inactiveColor: Color(0xFF8D8E98),
-                    onChanged: (double updatedHeight) {
-                      setState(() {
-                        height = updatedHeight.round();
-                      });
-                    },
-                  ), // Slider
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      inactiveTrackColor: Color(0xFF8D8E98),
+                      activeTrackColor: Colors.white,
+                      thumbColor: Color(0xFFEB1555),
+                      overlayColor: Color(0x29EB1555),
+                      thumbShape: RoundSliderThumbShape(
+                        enabledThumbRadius: 15.0,
+                      ), // RoundSliderThumbShape
+                      overlayShape: RoundSliderOverlayShape(
+                        overlayRadius: 30.0,
+                      ), // RoundSliderOverlayShape
+                      trackHeight: 1.0,
+                    ), // copyWith
+                    child: Slider(
+                      value: height.toDouble(),
+                      min: 120.0,
+                      max: 220.0,
+                      onChanged: (double updatedHeight) {
+                        setState(() {
+                          height = updatedHeight.round();
+                        });
+                      },
+                    ), // Slider
+                  ), // SliderTheme
                 ],
               ), // Column
             ), // ReusableCard
