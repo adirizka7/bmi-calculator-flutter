@@ -138,10 +138,10 @@ class _InputPageState extends State<InputPage> {
                                   weight -= 1;
                                 });
                               },
-                            ),
+                            ), // RoundIconButton
                             SizedBox(
                               width: 15.0,
-                            ),
+                            ), // SizedBox
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
@@ -149,12 +149,12 @@ class _InputPageState extends State<InputPage> {
                                   weight += 1;
                                 });
                               },
-                            ),
+                            ), // RoundIconButton
                           ],
-                        ),
+                        ), // Row
                       ],
-                    ),
-                  ),
+                    ), // Column
+                  ), // ReusableCard
                 ), // Expanded
                 Expanded(
                   child: ReusableCard(
@@ -174,10 +174,10 @@ class _InputPageState extends State<InputPage> {
                                   age -= 1;
                                 });
                               },
-                            ),
+                            ), // RoundIconButton
                             SizedBox(
                               width: 15.0,
-                            ),
+                            ), // SizedBox
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
@@ -185,22 +185,30 @@ class _InputPageState extends State<InputPage> {
                                   age += 1;
                                 });
                               },
-                            ),
+                            ), // RoundIconButton
                           ],
-                        ),
+                        ), // Row
                       ],
-                    ),
-                  ),
+                    ), // Column
+                  ), // ReusableCard
                 ), // Expanded
               ],
             ), // Row
           ), // Expanded
-          Container(
-            color: kBottomContainerColor,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
-          ), // Container
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/results');
+            },
+            child: Container(
+              child: Center(
+                child: Text('CALCULATE', style: kNumberTextStyle),
+              ), // Center
+              color: kBottomContainerColor,
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: kBottomContainerHeight,
+            ), // Container
+          ), // GestureDetector
         ],
       ), // Column
     ); // Scaffold
@@ -222,9 +230,9 @@ class RoundIconButton extends StatelessWidget {
       constraints: BoxConstraints.tightFor(
         width: 56.0,
         height: 56.0,
-      ),
+      ), // tightFor
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),
-    );
+    ); // RawMaterialButton
   }
 }
