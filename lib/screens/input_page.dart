@@ -64,7 +64,7 @@ class _InputPageState extends State<InputPage> {
                     ), // IconContent
                   ), // ReusableCard
                 ), // Expanded
-              ],
+              ], // <Widget>
             ), // Row
           ), // Expanded
           Expanded(
@@ -90,7 +90,7 @@ class _InputPageState extends State<InputPage> {
                       Text(
                         'cm',
                       ), // Text
-                    ],
+                    ], // <Widget>
                   ), // Row
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
@@ -105,7 +105,7 @@ class _InputPageState extends State<InputPage> {
                         overlayRadius: 30.0,
                       ), // RoundSliderOverlayShape
                       trackHeight: 1.0,
-                    ), // copyWith
+                    ), // SliderTheme.of(context).copyWith
                     child: Slider(
                       value: height.toDouble(),
                       min: 120.0,
@@ -117,7 +117,7 @@ class _InputPageState extends State<InputPage> {
                       },
                     ), // Slider
                   ), // SliderTheme
-                ],
+                ], // <Widget>
               ), // Column
             ), // ReusableCard
           ), // Expanded
@@ -154,9 +154,9 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ), // RoundIconButton
-                          ],
+                          ], // <Widget>
                         ), // Row
-                      ],
+                      ], // <Widget>
                     ), // Column
                   ), // ReusableCard
                 ), // Expanded
@@ -190,13 +190,13 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ), // RoundIconButton
-                          ],
+                          ], // <Widget>
                         ), // Row
-                      ],
+                      ], // <Widget>
                     ), // Column
                   ), // ReusableCard
                 ), // Expanded
-              ],
+              ], // <Widget>
             ), // Row
           ), // Expanded
           BottomButton(
@@ -204,7 +204,7 @@ class _InputPageState extends State<InputPage> {
               CalculatorBrain calc = CalculatorBrain(
                 height: height,
                 weight: weight,
-              );
+              ); // CalculatorBrain
 
               Navigator.push(
                 context,
@@ -213,13 +213,13 @@ class _InputPageState extends State<InputPage> {
                     bmi: calc.getBMI(),
                     resultText: calc.getResult(),
                     interpretation: calc.getInterpretation(),
-                  ),
-                ),
-              );
+                  ), // ResultsPage
+                ), // MaterialPageRoute
+              ); // Navigator.push
             },
             text: 'CALCULATE',
-          ),
-        ],
+          ), // BottomButton
+        ], // <Widget>
       ), // Column
     ); // Scaffold
   }

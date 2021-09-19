@@ -18,7 +18,7 @@ class ResultsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
-      ),
+      ), // AppBar
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -30,9 +30,9 @@ class ResultsPage extends StatelessWidget {
               child: Text(
                 'Your Result',
                 style: kTitleTextStyle,
-              ),
-            ),
-          ),
+              ), // Text
+            ), // Container
+          ), // Expanded
           Expanded(
             flex: 5,
             child: ReusableCard(
@@ -44,30 +44,28 @@ class ResultsPage extends StatelessWidget {
                   Text(
                     resultText,
                     style: kResultTextStyle,
-                  ),
+                  ), // Text
                   Text(
                     bmi,
                     style: kBMITextStyle,
-                  ),
+                  ), // Text
                   Text(
                     interpretation,
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            child: BottomButton(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              text: 'RE-CALCULATE',
-            ),
-          ),
-        ],
-      ),
-    );
+                  ), // Text
+                ], // <Widget>
+              ), // Column
+            ), // ReusableCard
+          ), // Expanded
+          BottomButton(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            text: 'RE-CALCULATE',
+          ), // BottomButton
+        ], // <Widget>
+      ), // Column
+    ); // Scaffold
   }
 }
